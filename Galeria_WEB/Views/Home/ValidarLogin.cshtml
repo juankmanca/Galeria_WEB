@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "ValidarLogin";
+}
+
+<h2>ValidarLogin</h2>
+@{
+    var data = ViewBag.Message;
+    var aux = ViewData["aux"];
+}
+@switch (aux)
+{
+    case "Usuario":
+        <h1>Usted va a ingresar como Usuario</h1>
+        <form action="~/Views/Usuario/Welcome.cshtml" method="post">
+            <input type="text" name="username" value="@data.Username" hidden />
+            <input type="submit" name="name" value="Continuar" class="btn btn-success" />
+        </form>
+        break;
+    case "Administrador":
+        <h1>Usted va a ingresar como Administrador</h1>
+        <form action="~/Views/Administrador/index.cshtml" method="post">
+            <input type="text" name="username" value="@data.Username" hidden />
+            <input type="submit" name="name" value="Continuar" class="btn btn-success" />
+        </form>
+        break;
+    case "Moderador":
+        <h1>Usted va a ingresar como Moderador</h1>
+        <form action="~/Views/Moderador/index.cshtml" method="post">
+            <input type="text" name="username" value="@data.Username" hidden />
+            <input type="submit" name="name" value="Continuar" class="btn btn-success" />
+        </form>
+        break;
+    default:
+        <h1>WTF</h1>
+        break;
+}

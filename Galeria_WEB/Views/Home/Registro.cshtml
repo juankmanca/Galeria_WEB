@@ -1,0 +1,75 @@
+﻿
+@{
+
+}
+<link href="~/Content/Mis-Estilos/HomeCSS/Registro.css" rel="stylesheet" />
+<div class="section">
+    <h1>Registro de Usuario</h1><br />
+    <form action="/Usuario/ValidarRegistro" method="post" class="card">
+        <div class="form-group">
+            <label >Nombre:</label>
+            <input type="text" name="nombre" placeholder="Ingrese su nombre" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label>Nombre de Usuario:</label>
+            <input type="text" name="username" placeholder="Ingrese su nombre de usuario" class="form-control"/>
+        </div>
+         <div class="form-group">
+            <label>Contraseña:</label>
+            <input type="password" name="contrasena" placeholder="Ingrese su contraseña" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Cedula:</label>
+            <input type="number" name="cedula" placeholder="Ingrese su cedula" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label>Direccion:</label>
+            <input type="text" name="direccion" placeholder="Ingrese su direccion" class="form-control" />
+        </div>
+       
+        <div class="form-group">
+            <label>Telefono:</label>
+            <input type="text" name="telefono" placeholder="Ingrese su numero de telefono" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Carnet:</label>
+            <input type="number" name="carnet" placeholder="Ingrese su numero de carnet" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Departamento:</label>
+            <select class="form-group" name="Departamento">
+                <option value="0"></option>
+                <option value="1">Sistemas</option>
+                <option value="2">Economia</option>
+                <option value="3">Biomedica</option>
+                <option value="4">Artes</option>
+                <option value="5">Idiomas</option>
+                <option value="6">Bienestar</option>
+                <option value="7">Telecomunicaciones</option>
+                <option value="8">Ciencias</option>
+                <option value="9">Ciencias</option>
+                <option value="10">Biblioteca</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Dependencia:</label>
+            <select name="Dependencia" class="form-group">
+                <option value="0"></option>
+                <option value="1">SIGA</option>
+                <option value="2">Postgrados</option>
+                <option value="3">Prepracticas</option>
+                <option value="4">Tesoreria</option>
+                <option value="5">Semilleros</option>
+                <option value="6">Investigaciones</option>
+                <option value="7">Pregrados</option>
+                <option value="8">Administrariva</option>
+            </select>
+        </div>
+        
+            <b> @ViewData["Error"] </b> <br />
+                <input type="submit" name="button" value="Registrarse" class="btn btn-success" /> 
+                <input type="text" name="TipoUsuario" value="Usuario" hidden />
+    </form>
+    </div>
+
+

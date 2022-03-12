@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Welcome";
+    List<Galeria_WEB.Models.Clases.Dispositivo> objetos = (List<Galeria_WEB.Models.Clases.Dispositivo>) ViewData["userList"];
+}
+
+<link href="~/Content/Mis-Estilos/UsuarioCSS/Welcome.css" rel="stylesheet" />
+
+<div class="section">
+    <div class="navbar navbar-expand-lg navbar-light bg-darkcyan" id="nav">
+        <div id="user">
+            @{
+                var data = ViewBag.Message;
+            }
+            <h3 class="navbar-brand btn btn-success">@data.Username</h3>
+        </div>
+        <div id="logout">
+            <a href="/" class="btn btn-primary btn-lg active btn btn-outline-success" id="logout" role="button" aria-pressed="true">Cerrar Sesión</a>   <br />
+        </div>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>Nombre</th>
+            <th>Marca</th>
+            <th>Tipo Dispositivo</th>
+            <th>Disponibilidad</th>
+        </tr>
+        @foreach (var obj in objetos)
+        {
+            
+            <tr>
+                <td>
+                    @obj.Nombre
+                </td>
+                <td> @obj.Marca</td>
+                <td> @obj.TipoDispositivo</td>
+                <td>
+                    <div class="control">
+                        @if (obj.Disponibilidad.Equals("Si"))
+                        {
+                        <form action="/Usuario/Prestamo" method="post">
+                            <input type="text" name="serial" value="@obj.Serial" hidden />
+                            <input type="text" name="username" value="@data.Username" hidden />
+                            <button class="btn btn-success" id="button"> Disponible</button>
+                        </form>
+                        }
+                        else
+                        {
+                             <button class="btn" id="button"> En Prestamo</button>
+                        }
+
+                    </div>
+                </td>
+            </tr>
+            }
+    </table>
+
+</div>

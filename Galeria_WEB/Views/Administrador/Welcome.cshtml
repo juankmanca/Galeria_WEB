@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "index";
+}
+<link href="~/Content/Mis-Estilos/HomeCSS/Registro.css" rel="stylesheet" />
+<div class="section">
+    <h1>Agregar un Dispositivo: </h1><br/>
+    <form action="/Administrador/AgregarDispositivo" method="post" class="card">
+        <div class="form-group">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" class="form-control"/>
+            </div>
+        <div class="form-group" >
+        <label>Serial</label>
+        <input type="text" name="serial" class="form-control"/>
+        </div>
+        <div class="form-group" >
+        <label>Marca</label>
+        <input type="text" name="marca" class="form-control" />
+        </div>
+        <div class="form-group" >
+        <label>Tipo de dispositivo</label>
+        <input type="text" name="tipo" class="form-control" />
+        </div>
+        <div class="form-group" >
+        <label>Disponibilidad</label>
+        <select name="disponibilidad" class="form-control">
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select>
+        </div>
+        <div class="form-group" >
+        <label>Descripcion</label>
+        <input type="text" name="descripcion" class="form-control"/>
+        </div>
+        <div class="form-group" >
+        <input type="submit" name="name" value="Guardar" />
+        </div>
+    </form>
+</div>

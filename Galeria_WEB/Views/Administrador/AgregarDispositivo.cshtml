@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "AgregarDispositivo";
+}
+
+<h2>AgregarDispositivo</h2>
+@{ 
+    var err = ViewData["err"];
+}
+
+@if (err.Equals(""))
+{
+    <h1>Exito al guardar</h1>
+}
+else
+{
+    <h1>Error: </h1><p>@err</p>
+}

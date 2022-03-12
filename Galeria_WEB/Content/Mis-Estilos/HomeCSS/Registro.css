@@ -1,0 +1,11 @@
+﻿.section {
+    margin: 10% 25%;
+    background-color: white;
+    padding: 5%;
+    font-size: 15px;
+}
+
+    .section h1 {
+        text-align: center;
+        font-size: 45px;
+    }

@@ -1,0 +1,24 @@
+﻿.section {
+    margin: 50px auto;
+    background-color: white;
+    padding: 5%;
+}
+
+.control {
+    display: inline-flex;
+}
+
+#button{
+    padding: 10px 30px;
+    margin-right: 15px;
+}
+
+#user {
+    float: left;
+}
+
+#logout {
+    float: right;
+    margin-top: 10px;
+}
+
